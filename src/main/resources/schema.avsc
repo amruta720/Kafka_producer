@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "BillingMessage",
+  "namespace": "com.example.avro",
+  "fields": [
+    {
+      "name": "device_id",
+      "type": "string",
+      "doc": "The unique identifier of the scanning device."
+    },
+    {
+      "name": "upc",
+      "type": "string",
+      "doc": "The Universal Product Code of the scanned product."
+    }
+  ],
+  "doc": "Message containing device ID and UPC for a product scanned during billing."
+}

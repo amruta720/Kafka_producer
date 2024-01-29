@@ -1,0 +1,24 @@
+# Required connection configs for Kafka producer, consumer, and admin
+bootstrap.servers=pkc-4r087.us-west2.gcp.confluent.cloud:9092
+security.protocol=SASL_SSL
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='OKU4GAEZAIW7TZRB' password='T1LWwvybSVwsHp1UmBwUHLocDSxLDu/3HevwWjxB3YxuP/0RYWuHeWEs1DCYrL8g';
+sasl.mechanism=PLAIN
+# Required for correctness in Apache Kafka clients prior to 2.6
+client.dns.lookup=use_all_dns_ips
+
+# Best practice for higher availability in Apache Kafka clients prior to 3.0
+session.timeout.ms=45000
+
+# Best practice for Kafka producer to prevent data loss
+acks=all
+
+# Required connection configs for Confluent Cloud Schema Registry
+schema.registry.url=https://psrc-dq2qz.us-central1.gcp.confluent.cloud
+basic.auth.credentials.source=USER_INFO
+basic.auth.user.info=PF44FE5MT2ELSU2Z:4t50QcVc00IjJfnszzB/2JHoWxTNeWeaaR1KM0pFA2wRp0BK1XPaM+VvSVG3KPPQ
+
+#keyserializer
+key.serializer = org.apache.kafka.common.serialization.StringSerializer
+value.serializer = io.confluent.kafka.serializers.KafkaAvroSerializer
+
+auto.create.topics.enable=true
